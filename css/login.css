@@ -1,0 +1,175 @@
+/* 🌟 Fondo con efecto degradado */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+body {
+    background: linear-gradient(135deg, #7FA6B2, #0255e4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-attachment: fixed; /* Hace que la imagen no se mueva al hacer scroll */
+
+    background: src="img/inpavito.png" no-repeat center center fixed;
+
+}
+
+/* 🔷 Contenedor 3D */
+.card-3d-container {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    perspective: 1000px;
+}
+
+/* 🔄 Envuelve las tarjetas y permite la rotación */
+.card-3d-wrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* 🌀 Efecto de volteo */
+.card-3d-wrap.flipped {
+    transform: rotateY(180deg);
+}
+
+/* 📦 Estilos generales para las tarjetas */
+.card-3d-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* 🔄 Lado posterior de la tarjeta (registro) */
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* 🎨 Tarjetas con estilo y sombra */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+    background-color: hsl(236, 43%, 15%);
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+    color: #ffffff;
+}
+
+/* 📝 Estilos para títulos */
+
+
+/* 🔹 Inputs con efecto 3D */
+.input-3d {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-3d:focus {
+    border-color: #667eea;
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+    outline: none;
+}
+
+/* 🎨 Botones con efectos */
+.btn-primary, .btn-success {
+    border-radius: 15px;
+    padding: 12px;
+    font-size: 16px;
+    transition: all 0.3s;
+    background: #ffaf01;
+}
+
+.btn-primary:hover {
+    background: #ffc300;
+}
+
+.btn-success:hover {
+    background: #5cb85c;
+}
+
+/* 📱 Responsividad para pantallas pequeñas */
+@media (max-width: 400px) {
+    .card-3d-container {
+        transform: scale(0.9);
+    }
+    .card {
+        padding: 20px;
+    }
+    .card h3 {
+        font-size: 24px;
+        color: #fefefe;
+        font-weight: bold;
+        z-index: -1; /* Asegura que el título esté encima de otros elementos */
+        position: relative; /* Necesario para aplicar z-index */
+
+    }
+    .input-3d {
+        font-size: 14px;
+    }
+}
+
+/* 📱 Ajustes para pantallas medianas */
+@media (max-width: 768px) {
+    .card-3d-container {
+        width: 90%;
+        height: auto;
+    }
+    .card {
+        max-width: 100%;
+        padding: 20px;
+    }
+}
+
+/* 🎨 Estilos para el logo */
+.logo {
+    display: block;
+    margin: 0 auto 15px;
+    width: 100px; /* Ajusta el tamaño */
+    height: auto;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2)); /* Pequeño efecto de sombra */
+}
+
+/* 📱 Ajustes para pantallas pequeñas */
+@media (max-width: 400px) {
+    .logo {
+        width: 80px; /* Reduce el tamaño en móviles */
+    }
+}
+
+/* 🖤 Overlay de fondo */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Asegura que esté detrás de todo */
+    background: rgba(2, 4, 37, 0.534);
+    display: flex;
+    margin: 0;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
