@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
 body {
-    background: linear-gradient(135deg, #7FA6B2, #343841);
+    background: linear-gradient(135deg, #7FA6B2, #0255e4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,8 +10,8 @@ body {
     margin: 0;
     background-size: cover; /* Hace que la imagen cubra toda la pantalla */
     background-attachment: fixed; /* Hace que la imagen no se mueva al hacer scroll */
-
-    background: url("img/inpavito.png") no-repeat center center fixed; /* 🔹 Corrección */
+    min-height: 100dvh;
+    overflow-x: hidden;
 }
 
 /* 🔷 Contenedor 3D */
@@ -21,6 +21,8 @@ body {
     min-height: 500px; /* 🔹 Se cambia height fijo a min-height */
     height: auto;
     perspective: 1000px;
+    margin: auto;  /* Asegura que el contenedor esté centrado */
+    transform-style: preserve-3d; /* Mantiene las transformaciones en 3D */
 }
 
 /* 🔄 Envuelve las tarjetas y permite la rotación */
@@ -30,6 +32,7 @@ body {
     position: absolute;
     transform-style: preserve-3d;
     transition: transform 0.6s ease-in-out;
+    transform-origin: center center; /* Establece el centro de la rotación */
 }
 
 /* 🌀 Efecto de volteo */
@@ -66,6 +69,13 @@ body {
     background-color: hsl(236, 43%, 15%);
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
     color: #ffffff;
+    display: block;
+    width: 100%; 
+    max-width: 400px;
+    white-space: normal;
+    writing-mode: horizontal-tb;
+    overflow: visible;
+    min-width: 380px; /* Evita que se haga demasiado delgada */
 }
 
 /* 🔹 Inputs con efecto 3D */
@@ -164,11 +174,13 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    z-index: -1; /* Asegura que esté detrás de todo */
+    height: 100dvh; /* Usa dvh para evitar problemas en móviles */
     background: rgba(2, 4, 37, 0.534);
-    display: flex;
-    margin: 0;
+    z-index: 0; /* Ponlo por encima del fondo pero debajo del contenido */
+    min-height: 100%;
+    min-width: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 #particles-js {
