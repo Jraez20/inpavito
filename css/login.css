@@ -126,3 +126,42 @@ body {
 #eyeIconLogin:hover, #eyeIconRegister:hover, #eyeIconConfirm:hover {
     color: #ffc300;
 }
+
+/* Para pantallas muy pequeñas (móviles) */
+@media (max-width: 400px) {
+    .card-3d-container {
+        transform: scale(0.9); /* Hace que la tarjeta se ajuste un poco más */
+    }
+    .card {
+        padding: 20px; /* Reduce el padding */
+    }
+    .logo {
+        width: 80px; /* Ajusta el tamaño del logo */
+    }
+    .input-3d {
+        font-size: 14px; /* Ajusta el tamaño de la fuente */
+    }
+    .card h3 {
+        font-size: 24px; /* Ajusta el tamaño de los títulos */
+    }
+}
+
+/* Para pantallas medianas (tabletas y pantallas de 768px o menos) */
+@media (max-width: 768px) {
+    .card-3d-container {
+        width: 90%; /* Hace que el contenedor sea más pequeño */
+        height: auto; /* Ajusta la altura de manera automática */
+    }
+    .card {
+        max-width: 100%; /* Asegura que no haya sobrepaso */
+        padding: 20px;
+    }
+}
+
+/* Pantallas grandes (más de 768px) */
+@media (min-width: 769px) {
+    .card-3d-container {
+        width: 400px; /* Tamaño fijo en pantallas grandes */
+        height: 500px;
+    }
+}
