@@ -1,5 +1,6 @@
 /* 🌟 Fondo con efecto degradado */
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
 body {
     background: linear-gradient(135deg, #7FA6B2, #0255e4);
     display: flex;
@@ -10,15 +11,15 @@ body {
     background-size: cover; /* Hace que la imagen cubra toda la pantalla */
     background-attachment: fixed; /* Hace que la imagen no se mueva al hacer scroll */
 
-    background: src="img/inpavito.png" no-repeat center center fixed;
-
+    background: url("img/inpavito.png") no-repeat center center fixed; /* 🔹 Corrección */
 }
 
 /* 🔷 Contenedor 3D */
 .card-3d-container {
     position: relative;
     width: 400px;
-    height: 500px;
+    min-height: 500px; /* 🔹 Se cambia height fijo a min-height */
+    height: auto;
     perspective: 1000px;
 }
 
@@ -67,9 +68,6 @@ body {
     color: #ffffff;
 }
 
-/* 📝 Estilos para títulos */
-
-
 /* 🔹 Inputs con efecto 3D */
 .input-3d {
     border: 1px solid #ccc;
@@ -105,7 +103,8 @@ body {
 /* 📱 Responsividad para pantallas pequeñas */
 @media (max-width: 400px) {
     .card-3d-container {
-        transform: scale(0.9);
+        width: 90%;
+        min-height: 450px; /* 🔹 Ajuste en tamaño mínimo */
     }
     .card {
         padding: 20px;
@@ -116,10 +115,15 @@ body {
         font-weight: bold;
         z-index: -1; /* Asegura que el título esté encima de otros elementos */
         position: relative; /* Necesario para aplicar z-index */
-
     }
     .input-3d {
         font-size: 14px;
+    }
+
+    /* 🔹 Mejor ajuste de botones en móviles */
+    .btn-primary, .btn-success {
+        width: 100%;
+        padding: 10px;
     }
 }
 
@@ -172,4 +176,3 @@ body {
     height: 100%;
     z-index: 0;
 }
-
