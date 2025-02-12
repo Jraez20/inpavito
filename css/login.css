@@ -74,7 +74,23 @@ body {
     outline: none;
 }
 
-/* Para pantallas muy pequeñas (móviles) */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Para pantallas pequeñas (móviles) */
 @media (max-width: 400px) {
     .card-3d-container {
         transform: scale(0.9); /* Ajusta el tamaño de la tarjeta */
@@ -91,6 +107,9 @@ body {
     .card h3 {
         font-size: 24px; /* Ajusta el tamaño de los títulos */
     }
+    .submit-btn {
+        font-size: 16px; /* Reduce el tamaño del botón */
+    }
 }
 
 /* Para pantallas medianas (tabletas y pantallas ≤ 768px) */
@@ -105,6 +124,10 @@ body {
     }
     .logo {
         width: 90px; /* Ajusta el tamaño del logo en tabletas */
+    }
+    .submit-btn {
+        padding: 12px;
+        font-size: 16px;
     }
 }
 
