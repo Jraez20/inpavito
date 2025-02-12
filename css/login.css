@@ -125,6 +125,11 @@ body {
         width: 100%;
         padding: 10px;
     }
+
+    /* 🔹 Ajuste en tamaño del logo */
+    .logo {
+        width: 80px; /* Reduce el tamaño en móviles */
+    }
 }
 
 /* 📱 Ajustes para pantallas medianas */
@@ -137,6 +142,11 @@ body {
         max-width: 100%;
         padding: 20px;
     }
+
+    /* 🔹 Ajuste del logo */
+    .logo {
+        width: 90px;
+    }
 }
 
 /* 🎨 Estilos para el logo */
@@ -146,13 +156,6 @@ body {
     width: 100px; /* Ajusta el tamaño */
     height: auto;
     filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2)); /* Pequeño efecto de sombra */
-}
-
-/* 📱 Ajustes para pantallas pequeñas */
-@media (max-width: 400px) {
-    .logo {
-        width: 80px; /* Reduce el tamaño en móviles */
-    }
 }
 
 /* 🖤 Overlay de fondo */
