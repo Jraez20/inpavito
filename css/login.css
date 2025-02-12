@@ -123,7 +123,6 @@ body {
         font-size: 24px;
         color: #fefefe;
         font-weight: bold;
-        z-index: -1; /* Asegura que el título esté encima de otros elementos */
         position: relative; /* Necesario para aplicar z-index */
     }
     .input-3d {
@@ -141,6 +140,7 @@ body {
         width: 80px; /* Reduce el tamaño en móviles */
     }
 }
+
 
 /* 📱 Ajustes para pantallas medianas */
 @media (max-width: 768px) {
