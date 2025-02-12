@@ -1,6 +1,9 @@
+// main.js
+
 document.addEventListener('DOMContentLoaded', () => {
     const appContainer = document.getElementById('login');
 
+    // HTML como cadena de texto
     const htmlContent = `
         <div class="overlay"></div>
         <div class="card-3d-container">
@@ -77,7 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                 </form>
                                 <p class="text-center mt-3"><a href="#" id="showLogin">Ya tengo cuenta</a></p>
                             </div>
+                            
                         </div>
+                        <br><br><br>
                     </div>
 
                     <!-- Formulario para Recuperar Contraseña -->
@@ -106,67 +111,146 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     `;
 
+    // Inyectar el contenido HTML en el contenedor
     appContainer.innerHTML = htmlContent;
+    
+    // Agregar funcionalidad JavaScript aquí (ya proporcionada en la respuesta anterior)
 
-    // Funcionalidad JavaScript
-    const togglePasswordLogin = document.getElementById('togglePasswordLogin');
-    const passwordFieldLogin = document.getElementById('password');
-    const eyeIconLogin = document.getElementById('eyeIconLogin');
+  
+        // Mostrar/ocultar contraseña en el formulario de Login
+        const togglePasswordLogin = document.getElementById('togglePasswordLogin');
+        const passwordFieldLogin = document.getElementById('password');
+        const eyeIconLogin = document.getElementById('eyeIconLogin');
 
-    togglePasswordLogin.addEventListener('click', function() {
-        const type = passwordFieldLogin.type === 'password' ? 'text' : 'password';
-        passwordFieldLogin.type = type;
-        eyeIconLogin.classList.toggle('fa-eye');
-        eyeIconLogin.classList.toggle('fa-eye-slash');
-    });
+        togglePasswordLogin.addEventListener('click', function() {
+            const type = passwordFieldLogin.type === 'password' ? 'text' : 'password';
+            passwordFieldLogin.type = type;
+            eyeIconLogin.classList.toggle('fa-eye');
+            eyeIconLogin.classList.toggle('fa-eye-slash');
+        });
 
-    const togglePasswordRegister = document.getElementById('togglePasswordRegister');
-    const passwordFieldRegister = document.getElementById('reg-password');
-    const eyeIconRegister = document.getElementById('eyeIconRegister');
+        // Mostrar/ocultar contraseña en el formulario de Registro
+        const togglePasswordRegister = document.getElementById('togglePasswordRegister');
+        const passwordFieldRegister = document.getElementById('reg-password');
+        const eyeIconRegister = document.getElementById('eyeIconRegister');
 
-    togglePasswordRegister.addEventListener('click', function() {
-        const type = passwordFieldRegister.type === 'password' ? 'text' : 'password';
-        passwordFieldRegister.type = type;
-        eyeIconRegister.classList.toggle('fa-eye');
-        eyeIconRegister.classList.toggle('fa-eye-slash');
-    });
+        togglePasswordRegister.addEventListener('click', function() {
+            const type = passwordFieldRegister.type === 'password' ? 'text' : 'password';
+            passwordFieldRegister.type = type;
+            eyeIconRegister.classList.toggle('fa-eye');
+            eyeIconRegister.classList.toggle('fa-eye-slash');
+        });
 
-    const togglePasswordConfirm = document.getElementById('togglePasswordConfirm');
-    const passwordFieldConfirm = document.getElementById('reg-password-confirm');
-    const eyeIconConfirm = document.getElementById('eyeIconConfirm');
+        // Mostrar/ocultar contraseña de confirmación en el formulario de Registro
+        const togglePasswordConfirm = document.getElementById('togglePasswordConfirm');
+        const passwordFieldConfirm = document.getElementById('reg-password-confirm');
+        const eyeIconConfirm = document.getElementById('eyeIconConfirm');
 
-    togglePasswordConfirm.addEventListener('click', function() {
-        const type = passwordFieldConfirm.type === 'password' ? 'text' : 'password';
-        passwordFieldConfirm.type = type;
-        eyeIconConfirm.classList.toggle('fa-eye');
-        eyeIconConfirm.classList.toggle('fa-eye-slash');
-    });
+        togglePasswordConfirm.addEventListener('click', function() {
+            const type = passwordFieldConfirm.type === 'password' ? 'text' : 'password';
+            passwordFieldConfirm.type = type;
+            eyeIconConfirm.classList.toggle('fa-eye');
+            eyeIconConfirm.classList.toggle('fa-eye-slash');
+        });
 
-    document.getElementById("showRegister").addEventListener("click", function(event) {
-        event.preventDefault();
-        document.getElementById("cardWrap").classList.add("flipped");
-        document.getElementById("registerForm").style.display = 'block';
-        document.getElementById("recoverForm").style.display = 'none';
-    });
+        // Funcionalidad para cambiar entre formularios
+        document.getElementById("showRegister").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("cardWrap").classList.add("flipped");
+            document.getElementById("registerForm").style.display = 'block';
+            document.getElementById("recoverForm").style.display = 'none';
+        });
 
-    document.getElementById("showLogin").addEventListener("click", function(event) {
-        event.preventDefault();
-        document.getElementById("cardWrap").classList.remove("flipped");
-        document.getElementById("registerForm").style.display = 'none';
-        document.getElementById("recoverForm").style.display = 'none';
-    });
+        document.getElementById("showLogin").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("cardWrap").classList.remove("flipped");
+            document.getElementById("registerForm").style.display = 'none';
+            document.getElementById("recoverForm").style.display = 'none';
+        });
 
-    document.getElementById("showRecover").addEventListener("click", function(event) {
-        event.preventDefault();
-        document.getElementById("cardWrap").classList.add("flipped");
-        document.getElementById("registerForm").style.display = 'none';
-        document.getElementById("recoverForm").style.display = 'block';
-    });
+        document.getElementById("showRecover").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("cardWrap").classList.add("flipped");
+            document.getElementById("registerForm").style.display = 'none';
+            document.getElementById("recoverForm").style.display = 'block';
+        });
 
-    document.getElementById("showLoginRecover").addEventListener("click", function(event) {
-        event.preventDefault();
-        document.getElementById("cardWrap").classList.remove("flipped");
-        document.getElementById("registerForm").style.display = 'none';
-        document.getElementById("recoverForm").style.display = 'none';
-    });
+        document.getElementById("showLoginRecover").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("cardWrap").classList.remove("flipped");
+            document.getElementById("registerForm").style.display = 'none';
+            document.getElementById("recoverForm").style.display = 'none';
+        });
+        
+
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                shape: {
+                    type: 'circle',
+                    stroke: {
+                        width: 0,
+                        color: '#fff'
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 3,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                    attract: {
+                        enable: false
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    }
+                }
+            },
+            retina_detect: true
+        });
+        
+
 });
