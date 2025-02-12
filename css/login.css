@@ -168,21 +168,6 @@ body {
     filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2)); /* Pequeño efecto de sombra */
 }
 
-/* 🖤 Overlay de fondo */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100dvh; /* Usa dvh para evitar problemas en móviles */
-    background: rgba(2, 4, 37, 0.534);
-    z-index: 0; /* Ponlo por encima del fondo pero debajo del contenido */
-    min-height: 100%;
-    min-width: 100%;
-    height: 100%;
-    width: 100%;
-}
-
 #particles-js {
     position: absolute;
     top: 0;
