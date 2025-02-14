@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // HTML como cadena de texto
     const htmlContent = `
-        <div class="overlay"></div>
+        <div id="scrollBar">
+             <img src="img/logo_inpavi.png" alt="Logo" id="logo-bar">
+        </div>
         <div class="card-3d-container">
             <div class="card-3d-wrap" id="cardWrap">
                 <div class="card-3d-wrapper">
@@ -75,6 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <div class="mb-3">
                                         <label for="phone" class="form-label">Número de Teléfono</label>
                                         <input type="tel" class="form-control input-3d" id="phone" placeholder="Ingrese su número de teléfono" required>
+                                    </div>
+                                     <div class="mb-3">
+                                        <label for="rol" class="form-label">Rol</label>
+                                        <input type="rol" class="form-control input-3d" id="rol" placeholder="Ingrese su rol" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="sede" class="form-label">Sede</label>
+                                        <input type="sede" class="form-control input-3d" id="sede" placeholder="Ingrese su sede" required>
                                     </div>
                                     <button type="submit" class="btn btn-success w-100">Registrarse</button>
                                 </form>
@@ -251,6 +261,19 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             retina_detect: true
         });
-        
+        // JavaScript para controlar la barra de desplazamiento
+// Seleccionamos la barra
+const scrollBar = document.getElementById('scrollBar');
+
+// Detectamos el evento de scroll
+window.addEventListener('scroll', () => {
+    // Comprobamos si el scroll es mayor que 0
+    if (window.scrollY > 0) {
+        scrollBar.classList.add('scrolled'); // Agregar la clase "scrolled" si se hace scroll
+    } else {
+        scrollBar.classList.remove('scrolled'); // Eliminar la clase "scrolled" cuando no hay scroll
+    }
+});
+
 
 });
